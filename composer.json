@@ -18,8 +18,8 @@
     "require": {
         "php": ">=8.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "8.0.x-dev",
-        "guzzlehttp/psr7": "2.7.x-dev",
-        "illuminate/support": "^12.0@dev"
+        "guzzlehttp/guzzle": "^7.5.1",
+        "guzzlehttp/psr7": "^2.5",
+        "illuminate/support": "v11.10.0"
     }
 }
