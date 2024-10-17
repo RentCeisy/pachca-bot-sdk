@@ -40,13 +40,13 @@ final class PachcaClient
      */
     public function sendRequest(PachcaRequest $request): PachcaResponse
     {
-        [$url, $method, $headers, $isAsyncRequest] = $this->prepareRequest($request);
+        [$url, $method, $headers] = $this->prepareRequest($request);
         $options = $this->getOptions($request, $method);
 
         $rawResponse = $this->httpClientHandler
             ->setTimeOut($request->getTimeOut())
             ->setConnectTimeOut($request->getConnectTimeOut())
-            ->send($url, $method, $headers, $options, $isAsyncRequest);
+            ->send($url, $method, $headers, $options);
 
         $response = $this->getResponse($request, $rawResponse);
 
