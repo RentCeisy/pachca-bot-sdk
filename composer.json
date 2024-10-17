@@ -1,0 +1,24 @@
+{
+    "name": "rentceisy/pachca-bot-sdk",
+    "description": "Chat Bot SDK for pachca (https://app.pachca.com/)",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rentceisy\\PachcaBotSdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RentCeisy",
+            "email": "a.yarukhin@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "8.0.x-dev",
+        "guzzlehttp/psr7": "2.7.x-dev",
+        "illuminate/support": "^12.0@dev"
+    }
+}
