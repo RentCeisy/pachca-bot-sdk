@@ -20,6 +20,6 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.5.1",
         "guzzlehttp/psr7": "^2.5",
-        "illuminate/support": "v11.10.0"
+        "illuminate/support": "9 - 11"
     }
 }
