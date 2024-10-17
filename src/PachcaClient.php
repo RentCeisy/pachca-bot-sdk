@@ -10,7 +10,7 @@ use Rentceisy\PachcaBotSdk\HttpClients\HttpClientInterface;
 
 final class PachcaClient
 {
-    public const BASE_BOT_URL = 'https://api.pachca.com/api/shared/v1/';
+    public const BASE_BOT_URL = 'https://api.pachca.com/api/shared/v1';
 
     private HttpClientInterface $httpClientHandler;
 
