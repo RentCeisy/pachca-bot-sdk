@@ -13,23 +13,13 @@ use Rentceisy\PachcaBotSdk\HttpClients\HttpClientInterface;
  */
 trait Http
 {
-    /** @var string Pachca Bot API Access Token. */
     protected string $accessToken;
-
-    /** @var PachcaClient|null The Pachca client service. */
     protected ?PachcaClient $client = null;
-
-    /** @var PachcaResponse|null Stores the last request made to Pachca Bot API. */
     protected ?PachcaResponse $lastResponse = null;
-
-    /** @var int Connection timeout of the request in seconds. */
     protected int $connectTimeOut = 10;
-
-    /** @var HttpClientInterface|null Http Client Handler */
     protected ?HttpClientInterface $httpClientHandler = null;
-
-    /** @var string|null Base Bot Url */
     protected ?string $baseBotUrl = null;
+    protected int $timeOut = 60;
 
     /**
      * Sets the bot access token to use with API requests.
@@ -100,6 +90,11 @@ trait Http
             $method,
             $endpoint,
             $params,
-        ))->setConnectTimeOut($this->getConnectTimeOut());
+        ))->setTimeOut($this->getTimeOut())->setConnectTimeOut($this->getConnectTimeOut());
+    }
+
+    public function getTimeOut(): int
+    {
+        return $this->timeOut;
     }
 }
