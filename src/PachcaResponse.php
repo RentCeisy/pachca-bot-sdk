@@ -179,7 +179,7 @@ final class PachcaResponse
     /**
      * Returns the exception that was thrown for this request.
      */
-    public function getThrownException(): PachkaSDKException
+    public function getThrownException(): PachcaSDKException
     {
         return $this->thrownException;
     }

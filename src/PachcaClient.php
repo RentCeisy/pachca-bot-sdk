@@ -57,7 +57,7 @@ final class PachcaClient
         return $response;
     }
 
-    public function prepareRequest(PachkaRequest $request): array
+    public function prepareRequest(PachcaRequest $request): array
     {
         $url = $this->baseBotUrl . '/' . $request->getEndpoint();
 
@@ -69,12 +69,12 @@ final class PachcaClient
         return $this->baseBotUrl;
     }
 
-    private function getResponse(PachkaRequest $request, ResponseInterface|PromiseInterface|null $response): PachkaResponse
+    private function getResponse(PachcaRequest $request, ResponseInterface|PromiseInterface|null $response): PachcaResponse
     {
-        return new PachkaResponse($request, $response);
+        return new PachcaResponse($request, $response);
     }
 
-    private function getOptions(PachkaRequest $request, string $method): array
+    private function getOptions(PachcaRequest $request, string $method): array
     {
         return $method === 'POST' ? $request->getPostParams() : ['query' => $request->getParams()];
     }

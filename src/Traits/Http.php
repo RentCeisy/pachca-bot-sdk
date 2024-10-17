@@ -69,10 +69,10 @@ trait Http
     /**
      * Returns the PachcaClient service.
      */
-    public function getClient(): PachkaClient
+    public function getClient(): PachcaClient
     {
         if ($this->client === null) {
-            $this->client = new PachkaClient($this->httpClientHandler, $this->baseBotUrl);
+            $this->client = new PachcaClient($this->httpClientHandler, $this->baseBotUrl);
         }
 
         return $this->client;
@@ -81,11 +81,11 @@ trait Http
     /**
      * Sends a request to Pachca Bot API and returns the result.
      *
-     * @throws PachkaSDKException
+     * @throws PachcaSDKException
      */
-    protected function sendRequest(string $method, string $endpoint, array $params = []): PachkaResponse
+    protected function sendRequest(string $method, string $endpoint, array $params = []): PachcaResponse
     {
-        $request = $this->resolvePachkaRequest($method, $endpoint, $params);
+        $request = $this->resolvePachcaRequest($method, $endpoint, $params);
 
         return $this->lastResponse = $this->getClient()->sendRequest($request);
     }
@@ -93,9 +93,9 @@ trait Http
     /**
      * Instantiates a new PachcaRequest entity.
      */
-    protected function resolvePachkaRequest(string $method, string $endpoint, array $params = []): PachkaRequest
+    protected function resolvePachcaRequest(string $method, string $endpoint, array $params = []): PachcaRequest
     {
-        return (new PachkaRequest(
+        return (new PachcaRequest(
             $this->getAccessToken(),
             $method,
             $endpoint,

@@ -85,11 +85,11 @@ final class PachcaRequest
     public function validateMethod(): void
     {
         if ($this->method === '' || $this->method === '0') {
-            throw new PachkaSDKException('HTTP method not specified.');
+            throw new PachcaSDKException('HTTP method not specified.');
         }
 
         if (!in_array($this->method, ['GET', 'POST'])) {
-            throw new PachkaSDKException('Invalid HTTP method specified. Must be GET or POST');
+            throw new PachcaSDKException('Invalid HTTP method specified. Must be GET or POST');
         }
     }
 
@@ -137,7 +137,7 @@ final class PachcaRequest
     public function getDefaultHeaders(): array
     {
         return [
-            'User-Agent' => 'Pachka Bot PHP SDK v' . PachkaApiApi::VERSION . ' (https://github.com/rentceisy/pachca-bot-sdk)',
+            'User-Agent' => 'Pachca Bot PHP SDK v' . Pachca::VERSION . ' (https://github.com/rentceisy/pachca-bot-sdk)',
             'Authorization' => 'Bearer ' . $this->getAccessToken(),
         ];
     }
