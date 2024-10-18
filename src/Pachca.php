@@ -10,7 +10,7 @@ class Pachca
 {
     use Http;
     use Message;
-    public const VERSION = '0.1';
+    public const VERSION = 'v0.0.1';
     /**
      * Instantiates a new Pachca super-class object.
      *

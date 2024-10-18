@@ -48,6 +48,7 @@ trait Http
      */
     protected function post(string $endpoint, array $params = []): PachcaResponse
     {
+        $params = ['form_params' => $params];
         return $this->sendRequest('POST', $endpoint, $params);
     }
 
