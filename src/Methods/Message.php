@@ -10,8 +10,11 @@ trait Message
     /**
      * @throws PachcaSDKException
      */
-    public function sendMessage(array $params): MessageObject
+    public function sendMessage(array $params): ?MessageObject
     {
+        if ($this->getAccessToken() === null) {
+            return null;
+        }
         $response = $this->post('messages', $params);
 
         return new MessageObject($response->getDecodedBody());

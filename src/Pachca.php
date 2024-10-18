@@ -16,7 +16,7 @@ class Pachca
      *
      * @throws PachcaSDKException
      */
-    public function __construct(string $token)
+    public function __construct(?string $token)
     {
         $this->setAccessToken($token);
         $this->validateAccessToken();

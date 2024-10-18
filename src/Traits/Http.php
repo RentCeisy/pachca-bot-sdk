@@ -13,7 +13,7 @@ use Rentceisy\PachcaBotSdk\HttpClients\HttpClientInterface;
  */
 trait Http
 {
-    protected string $accessToken;
+    protected ?string $accessToken;
     protected ?PachcaClient $client = null;
     protected ?PachcaResponse $lastResponse = null;
     protected int $connectTimeOut = 10;
@@ -24,9 +24,9 @@ trait Http
     /**
      * Sets the bot access token to use with API requests.
      *
-     * @param  string  $accessToken  The bot access token to save.
+     * @param  null|string  $accessToken  The bot access token to save.
      */
-    public function setAccessToken(string $accessToken): self
+    public function setAccessToken(?string $accessToken): self
     {
         $this->accessToken = $accessToken;
 
@@ -36,7 +36,7 @@ trait Http
     /**
      * Returns Pachca Bot API Access Token.
      */
-    public function getAccessToken(): string
+    public function getAccessToken(): ?string
     {
         return $this->accessToken;
     }
